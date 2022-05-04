@@ -4,7 +4,7 @@ body{
 
 $mainBlue: #2f5572;
 
-.large-hero{
+.large-hero {
   h2 {
     color: $mainBlue;
   }
