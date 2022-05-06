@@ -1,12 +1,50 @@
 .large-hero {
     position: relative;
+
+    &__text-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__title{
+        font-weight: 300;
+        color: #2f5572;
+        font-size: 4.8rem;
+    }
+
+    &__subtitle {
+        font-weight: 300;
+        color: #2f5572;
+        font-size: 2.9rem;
+    }
 }
 
-.large-hero__text-content {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    width: 100%;
-    text-align: center;
-}
+/*The BEM strategy is used here to help use organize blacks with blocks with elements of their own and modifiers for later uses.
+BEM = "Blocks, Elements, and Modifiers */
+
+/*BEM Meanings:
+1) Block - is an independent resuable part of the design
+2) Element - belongs to a block and cannot be used outside othe block it beleongs to
+3) Modifiers - Can be used on a block or an element to indicate a change to the default state of an object. */
+
+/*BEM overview
+- CSS selectors should target elemetns directly with classes, instrad of relying on type selectors, descendent selectors, and the cascade.
+- Because we are limiting cascade we are free to move blocks around and reuse them throughout the page.
+- Blocks can be nested inside other blocks.
+- Identify patterns, and then create single-responsibility blocks.
+- Makes the relationship between HTML and CSS clear */
+
+
+/*DOing the "&" sign makes it so insteado putting each sperate class witht heir one class names
+we place the "&" sign and place the rest of the words for each class title we gave making it so the code still goes through in a 
+much easier fashon */
+
+
+
+
+
+
