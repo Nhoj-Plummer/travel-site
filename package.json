@@ -25,6 +25,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "css-loader": "^6.7.1",
+    "postcss-import": "^14.1.0",
     "postcss-loader": "^6.2.1",
     "postcss-nested": "^5.0.6",
     "postcss-simple-vars": "^6.0.3",
