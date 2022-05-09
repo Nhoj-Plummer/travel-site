@@ -1,3 +1,6 @@
+const { setServers } = require('dns')
+const { appendFile } = require('fs')
+const { hostname } = require('os')
 const path = require('path')
 
 const postCSSPlugins = [
@@ -13,8 +16,17 @@ module.exports = {
     filename: 'bundled.js',
     path: path.resolve(__dirname, 'app')
   },
+  devServer: {
+    watchFiles: ('./app/**/*.html'),
+    static: {
+      directory: path.join(__dirname, 'app'),
+    },
+    hot: true,
+    host: '192.168.3.190',
+    port: 3000,
+    liveReload: false
+  },
   mode: 'development',
-  watch: true,
   module: {
     rules: [
       {
