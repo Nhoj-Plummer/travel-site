@@ -5,6 +5,7 @@ const path = require('path')
 
 const postCSSPlugins = [
   require('postcss-import'),
+  require('postcss-mixins'),
   require('postcss-simple-vars'), 
   require('postcss-nested'), 
   require('autoprefixer')
@@ -22,7 +23,7 @@ module.exports = {
       directory: path.join(__dirname, 'app'),
     },
     hot: true,
-    host: '192.168.3.190',
+    host: '0.0.0.0',
     port: 3000,
     liveReload: false
   },
