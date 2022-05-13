@@ -43,4 +43,8 @@
     &--b-margin-large {
         margin-bottom: 1.6rem;
     }
+
+    &--no-t-margin {
+        margin-top: 0;
+    }
 }
