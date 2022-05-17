@@ -4,7 +4,14 @@
     @mixin atMedium {
         padding: 4.5rem 0;
     }
-    padding: 4.5rem 0;
+    
+    &--no-b-padding-until-medium {
+        padding-bottom: 0;
+
+        @mixin atMedium {
+            padding-bottom: 4.5rem;
+        }
+    }
 
     &--blue {
         background-color: $mainBlue;
@@ -12,7 +19,11 @@
     }
 
     &--testimonials {
-        background: url('/app/assets/images/testimonials-bg.jpg') top center no-repeat;
-        background-size: cover;
+        background-color: #e0e6ef;
+
+        @mixin atMedium {
+            background: url('/app/assets/images/testimonials-bg.jpg') top center no-repeat;
+            background-size: cover;
+        }
     }
 }
