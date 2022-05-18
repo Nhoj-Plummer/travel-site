@@ -1,68 +1,64 @@
 .row {
 
-    @mixin clearfix;
-
     &--t-padding {
       padding-top: 80px;  
     }
 
-    &--gutters {
-        margin-right: -65px;
-    }
-
-    &--gutters-large {
-        margin-right: -100px;
-    }
-
-    &--gutters-small {
-        margin-right: -45px;
-    }
-  
-    &--gutters > div {
-        padding-right: 65px;
-        box-sizing: border-box;
-    }
-
-    &--gutters-large > div {
-        padding-right:  100px;
-    }
-
-    &--gutters-small > div {
-        padding-right: 45px;
-    }
-
+    
     &__b-margin-until-medium {
         margin-bottom: 1rem;
     }
 
     @mixin atMedium {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+        &--gutters {
+            column-gap: 5.3%;
+        }
+    
+        &--gutters-large {
+            column-gap: 8%;
+        }
+    
+        &--gutters-small {
+            column-gap: 3.6%;
+        }
 
         &__b-margin-until-medium {
             margin-bottom: 0;
         }
 
+        &__large-1,
+        &__large-2,
+        &__large-3,
+        &__large-4,
+        &__large-5,
+        &__large-7,
+        &__large-8,
+        &__large-9,
+        &__large-10,
+        &__large-11,
+        &__large-12, {
+            grid-column: span 12;
+        }
+        
+
         &__medium-4 {
-            float: left;
-            width: 33.33%;
+            grid-column: span 4;
         }
 
-        &__medium-4--larger {
-            width: 37%;
-        }
-
-        &__medium-6 {
+        &__medium-6 { /*The "grid-column: span 6;" isn't working for some reason leaving the float css for now. 
+            You don't need to use grid but, it is a good tool and every team is different.
+            If you wanna learn more about "Grid" look deeper for yourself. */
             float: left;
-            width: 50%;
+            width: 50%; 
         }
     
         &__medium-8 {
-            float: left;
-            width: 66.66%;
+            grid-column: span 8;
         }
 
-        &__medium-8--smaller {
-            width: 63%;
-        }
 
     }
 
@@ -73,27 +69,17 @@
         }
 
         &__large-4 {
-            float: left;
-            width: 33.33%;
-        }
-
-        &__large-4--larger {
-            width: 37%;
+            grid-column: span 4;
         }
 
         &__large-6 {
-            float: left;
-            width: 50%;
+            grid-column: span 6;
         }
     
         &__large-8 {
-            float: left;
-            width: 66.66%;
+            grid-column: span 8;
         }
 
-        &__large-8--smaller {
-            width: 63%;
-        }
 
     }
 
@@ -102,24 +88,24 @@
 
     &--equal-height-at-medium {
         @mixin atMedium {
-            display: flex;
+            & > div {
+                float: none;
+                display: flex;
+            }
         }
 
-        & > div {
-            float: none;
-            display: flex;
-        }
+        
     }
 
     &--equal-height-at-large {
         @mixin atLarge {
-            display: flex;
+            & > div {
+                float: none;
+                display: flex;
+            }
         }
 
-        & > div {
-            float: none;
-            display: flex;
-        }
+      
     }
 
     
