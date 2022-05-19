@@ -1,21 +1,21 @@
 import '../styles/styles.css'
+import Person from './modules/Person'
 
 if (module.hot) {
     module.hot.accept()
 }
 
 /* Lesson example code below this line */
-function Person(fullName, favColor) {
-    this.name = fullName;
-    this.favoriteColor = favColor;
-    this.greet = function() {
-        console.log("Hello my name is " + this.name + " and my favorite color is " + this.favoriteColor + ".");
+class Adult extends Person {
+    payTaxes() {
+        console.log(this.name + " now owes zero taxes.")
     }
 }
 
-var john = new Person("John Doe", "blue");
+var john = new Person("John Doe", "purple");
 john.greet();
 
 
-var jane = new Person("Jane Smith", "green");
+var jane = new Adult("Jane Smith", "green");
 jane.greet();
+jane.payTaxes();
